@@ -1,7 +1,15 @@
+from pathlib import Path # pathlib module
+
 # Reading files
-def read_file():
+def read_file(filename: str):
+    # Access path
+    dir = Path(__file__).parent
+
+    # File path
+    path = dir / filename
+
     # Open file
-    file = open("users.txt", "r")
+    file = open(path, "r")
 
     # Read file
     content = file.read()
@@ -18,11 +26,17 @@ def read_file():
 
 # Writing files
 def write_file(filename: str):
+    # Access path
+    dir = Path(__file__).parent
+
+    # File path
+    path = dir / filename
+
     # Data to write
     tech_stack = ["TypeScript", "Vue", "Nuxt", "Pocketbase"]
 
     # Open file
-    file = open(filename, "w")
+    file = open(path, "w")
 
     # Write file
     for i in tech_stack:
@@ -34,11 +48,17 @@ def write_file(filename: str):
 
 # Write & Read files
 def write_read_file(filename: str):
+    # Access path
+    dir = Path(__file__).parent
+
+    # File path
+    path = dir / filename
+
     # Data to write
     groceries = ["Apples", "Bananas", "Oranges", "Peaches"]
 
     # Open file
-    file = open(filename, "w+")
+    file = open(path, "w+")
 
     # Write file
     for i in groceries:
@@ -57,11 +77,17 @@ def write_read_file(filename: str):
 
 # Appending to files
 def append_to_file(filename: str):
+    # Access path
+    dir = Path(__file__).parent
+
+    # File path
+    path = dir / filename
+
     # Data to append
     books = ["Wuthering Heights", "Dune", "The Hobbit"]
 
     # Open file
-    file = open(filename, "a")
+    file = open(path, "a")
 
     # Append to file
     for i in books:
@@ -71,12 +97,11 @@ def append_to_file(filename: str):
     # Close file
     file.close()
 
-
 def main():
-    # read_file()
+    # read_file("users.txt")
     # write_file("stack.txt")
     # write_read_file("groceries.txt")
-    append_to_file("books.txt")
+    # append_to_file("books.txt")
     return
 
 if __name__ == "__main__":
