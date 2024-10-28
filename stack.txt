@@ -1,0 +1,4 @@
+TypeScript
+Vue
+Nuxt
+Pocketbase
