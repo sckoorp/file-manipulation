@@ -55,10 +55,28 @@ def write_read_file(filename: str):
     # Close file
     file.close()
 
+# Appending to files
+def append_to_file(filename: str):
+    # Data to append
+    books = ["Wuthering Heights", "Dune", "The Hobbit"]
+
+    # Open file
+    file = open(filename, "a")
+
+    # Append to file
+    for i in books:
+        # "\n" new line character
+        file.write(i + "\n")
+    
+    # Close file
+    file.close()
+
+
 def main():
     # read_file()
     # write_file("stack.txt")
-    write_read_file("groceries.txt")
+    # write_read_file("groceries.txt")
+    append_to_file("books.txt")
     return
 
 if __name__ == "__main__":
