@@ -9,11 +9,17 @@ def read_file(filename: str):
     path = dir / filename
 
     # Open file
-    file = open(path, "r")
-
-    # Read file
-    content = file.read()
-    print(content)
+    try:
+        file = open(path, "r")
+        # Read file
+        content = file.read()
+        print(content)
+        # Close file
+        file.close()
+    except FileNotFoundError:
+        print(f"'{filename}' does not exist!")  
+    except Exception as e:
+        print(f"Unexpected error: {e}")  
 
     # Read file lines
     # lines = file.readlines()
@@ -22,7 +28,7 @@ def read_file(filename: str):
     #    print(line)
 
     # Close file
-    file.close()
+    # file.close()
 
 # Writing files
 def write_file(filename: str):
