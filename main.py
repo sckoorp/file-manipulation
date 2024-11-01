@@ -103,11 +103,29 @@ def append_to_file(filename: str):
     # Close file
     file.close()
 
+def context_managers(filename: str):
+    # Access path
+    dir = Path(__file__).parent
+
+    # File path
+    path = dir / filename
+
+    # Data to append
+    instruments = ["Piano", "Guitar", "Violin"]
+
+    # Context manager ==> Auto closes
+    with path.open("w") as file:
+        for instrument in instruments:
+            # "\n" new line character
+            file.write(instrument + "\n")
+            
+
 def main():
     # read_file("users.txt")
     # write_file("stack.txt")
     # write_read_file("groceries.txt")
     # append_to_file("books.txt")
+    # context_managers("instruments.txt")
     return
 
 if __name__ == "__main__":
